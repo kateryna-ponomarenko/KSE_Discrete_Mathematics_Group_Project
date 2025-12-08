@@ -1,7 +1,6 @@
 import random
 
-# v = int(random.randint(50,90))
-v = 10
+v = int(random.randint(50,90))
 matrix = [[0 for _ in range(v) ] for _ in range(v)]
 
 Hh = int(input("Enter the % of graf: "))
@@ -25,11 +24,6 @@ else:
             matrix[u][n] = 1
             matrix[n][u] = 1
             Ah.append((u, n))
-
-V = [x for x in range(1, v+1)]
-
-for i in range(v):
-    matrix[i][i] = 0
 
 rows = []
 cols = []
@@ -57,7 +51,7 @@ num2 = num2[:v]
 print("    ", *num0)
 print("    ", *num1)
 print("      ", *num2)
-print("     ", "--" * len(V))
+print("     ", "--" * v)
 s = 0
 a = " "
 for row in matrix:
