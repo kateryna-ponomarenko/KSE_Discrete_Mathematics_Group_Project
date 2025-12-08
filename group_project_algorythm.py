@@ -19,6 +19,8 @@ def print_matrix():
                 dist[i][j] = 0
             elif matrix[i][j] == 1:
                 dist[i][j] = 1
+            else:
+                dist[i][j] = INF
 
     for k in range(v):
         for i in range(v):
@@ -27,7 +29,7 @@ def print_matrix():
                     dist[i][j] = dist[i][k] + dist[k][j]
 
     print("Матриця найкоротших шляхів: ")
-    for row in matrix:
+    for row in dist:
         print(*row)
 
 
