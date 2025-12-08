@@ -29,16 +29,20 @@ def print_matrix():
                     dist[i][j] = dist[i][k] + dist[k][j]
 
     print("Матриця найкоротших шляхів: ")
-    for row in dist:
-        print(*row)
 
+    for row in dist:
+        for i, r in enumerate(row):
+            if r == INF or r == 0:
+                row[i] = "/"
+
+        print(*row)
 
 with open('math.txt', 'r') as file:
     line = file.readline()
     line_without_spaces = line.replace(' ', '').strip()
     v = len(line_without_spaces)
 
-    matrix = [[random.randint(0, 1) for _ in range(v)] for _ in range(v)]
+    matrix = [[0 for _ in range(v)] for _ in range(v)]
 
     matrix[0] = [int(ch) for ch in line_without_spaces]
 
@@ -55,6 +59,5 @@ with open('math.txt', 'r') as file:
             raise ValueError
 
         matrix[i] = lst
-
 
 print_matrix()
