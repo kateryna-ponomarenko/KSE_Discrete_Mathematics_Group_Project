@@ -1,16 +1,6 @@
 import random
 INF = 10**9
 
-def shortest_path(i, j, k):
-    if k == 0:
-        return matrix[i][j]
-    # рекурсивна формула Флойда:
-    # d_k(i,j) = min(d_{k-1}(i,j), d_{k-1}(i,k) + d_{k-1}(k,j))
-    return min(
-        shortest_path(i, j, k-1),
-        shortest_path(i, k, k-1) + shortest_path(k, j, k-1)
-    )
-
 def print_matrix():
     dist = [[INF] * v for _ in range(v)]
     for i in range(v):
