@@ -1,18 +1,37 @@
 import random
 
 v = int(random.randint(50,90))
-matrix = [[random.randint(0, 1) for _ in range(v) ] for _ in range(v)]
+matrix = [[0 for _ in range(v) ] for _ in range(v)]
+
+Hh = int(input("Enter the % of graf: "))
+H = v**2 / 100 * Hh
+
+Ah = []
+t = True
+while H > v**2 - v:
+    print("It is too big %. Try again: ")
+    Hh = int(input("Enter the % of graf: "))
+    H = v ** 2 / 100 * Hh
+else:
+    while len(Ah) < H:
+        u = random.randint(0, v - 1)
+        n = random.randint(0, v - 1)
+        if u == n:
+            continue
+        else:
+            matrix[u][n] = 1
+            matrix[n][u] = 1
+            Ah.append((u, n))
+
 V = [x for x in range(1, v+1)]
 
-
-for f in range(v):
-    matrix[f][f] = 0
-
+for i in range(v):
+    matrix[i][i] = 0
 
 rows = []
 cols = []
 
-nums0 = [" ", 1, 2]
+nums0 = [" ", 1, 2, 3, 4, 5, 6, 7, 8, 9]
 nums1 = [" ", 1, 2, 3, 4, 5, 6, 7, 8, 9]
 nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 num0 = []
