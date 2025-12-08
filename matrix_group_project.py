@@ -4,6 +4,7 @@ v = int(random.randint(50,90))
 matrix = [[random.randint(0, 1) for _ in range(v) ] for _ in range(v)]
 V = [x for x in range(1, v+1)]
 
+
 for f in range(v):
     matrix[f][f] = 0
 
@@ -24,14 +25,14 @@ for i in nums1:
 
 for i in nums0:
     for t in range(100):
-        if len(num0) == v:
+        if len(num0) == v + 1:
             break
         num0.append(i)
 
 num2 = [*nums2 * 10]
 num2 = num2[:v]
 
-print(" " * 99, *num0)
+print("    ", *num0)
 print("    ", *num1)
 print("      ", *num2)
 print("     ", "--" * len(V))
@@ -61,3 +62,7 @@ ab = []
 for i in range(len(rows)):
     ab.append((rows[i], cols[i]))
 print(ab)
+
+with open('math.txt', 'w') as f:
+    for row in matrix:
+        f.write(' '.join(str(x) for x in row) + '\n')
