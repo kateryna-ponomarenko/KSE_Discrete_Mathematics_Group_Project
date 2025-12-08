@@ -1,8 +1,12 @@
 import random
 
 v = int(random.randint(50,90))
-matrix = [[random.randint(0, 1) for _ in range(v)] for _ in range(v)]
+matrix = [[random.randint(0, 1) for _ in range(v) ] for _ in range(v)]
 V = [x for x in range(1, v+1)]
+
+for f in range(v):
+    matrix[f][f] = 0
+
 
 rows = []
 cols = []
@@ -14,7 +18,7 @@ num0 = []
 num1 = []
 for i in nums1:
     for t in range(10):
-        if len(num1) == v:
+        if len(num1) == v + 1:
             break
         num1.append(i)
 
@@ -27,8 +31,8 @@ for i in nums0:
 num2 = [*nums2 * 10]
 num2 = num2[:v]
 
-print("      ", *num0)
-print("      ", *num1)
+print(" " * 99, *num0)
+print("    ", *num1)
 print("      ", *num2)
 print("     ", "--" * len(V))
 s = 0
@@ -49,7 +53,7 @@ for row in matrix:
     c = 0
     for i in row:
         c += 1
-        if i == 1:
+        if i == 1 and t != c:
             rows.append(t)
             cols.append(c)
 
