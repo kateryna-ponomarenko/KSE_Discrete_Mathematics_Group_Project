@@ -1,10 +1,11 @@
 import random
 
-v = int(random.randint(50,90))
+# v = int(random.randint(50,90))
+v = 10
 matrix = [[0 for _ in range(v) ] for _ in range(v)]
 
 Hh = int(input("Enter the % of graf: "))
-H = v**2 / 100 * Hh
+H = v**2 // 100 * Hh
 
 Ah = []
 t = True
@@ -17,6 +18,8 @@ else:
         u = random.randint(0, v - 1)
         n = random.randint(0, v - 1)
         if u == n:
+            continue
+        if (u, n) in Ah:
             continue
         else:
             matrix[u][n] = 1
