@@ -1,4 +1,6 @@
-import random
+import time
+start = time.perf_counter()
+
 INF = 10**9
 
 def print_matrix():
@@ -24,7 +26,6 @@ def print_matrix():
         for i, r in enumerate(row):
             if r == INF or r == 0:
                 row[i] = "/"
-
         print(*row)
 
 with open('math.txt', 'r') as file:
@@ -51,3 +52,6 @@ with open('math.txt', 'r') as file:
         matrix[i] = lst
 
 print_matrix()
+
+end = time.perf_counter()
+print("Time of work: ", end - start, "seconds" )
