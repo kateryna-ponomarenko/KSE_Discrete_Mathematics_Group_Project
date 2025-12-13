@@ -24,7 +24,7 @@ def print_matrix():
 
     for row in dist:
         for i, r in enumerate(row):
-            if r == INF or r == 0:
+            if r == INF:
                 row[i] = "/"
         print(*row)
 
@@ -55,3 +55,4 @@ print_matrix()
 
 end = time.perf_counter()
 print("Time of work: ", end - start, "seconds" )
+
